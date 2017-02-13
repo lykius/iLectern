@@ -25,12 +25,12 @@
         </div>
 
         <div class="col s5">
-            <img id="firstImage" src="{% static images.0 %}" style="height:95vh; display:block; margin:auto;">
+            <img id="firstImage" src="{{ images.0 }}" style="height:95vh; display:block; margin:auto;">
         </div>
 
         <div class="col s5">
             {% if sheet.number_of_pages > 1 %}
-                <img id="secondImage" src="{% static images.1 %}" style="height:95vh; display:block; margin:auto;">
+                <img id="secondImage" src="{{ images.1 }}" style="height:95vh; display:block; margin:auto;">
             {% endif %}
         </div>
 
@@ -66,10 +66,10 @@
             }
 
             function loadImages() {
-                $("#firstImage").attr("src", "/static/" + images[firstPage]);
+                $("#firstImage").attr("src", images[firstPage]);
                 if (firstPage < {{ sheet.number_of_pages }} - 1)
                 {
-                    $("#secondImage").attr("src", "/static/" + images[firstPage + 1]);
+                    $("#secondImage").attr("src", images[firstPage + 1]);
                 }
             }
 

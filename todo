@@ -1,4 +1,6 @@
-1) creare CSS con stili ora sparsi nei vari sorgenti HTML
-2) sistemare in modo elegante i problemi di utilizzo di JQuery all'interno di Electron
-3) trovare una soluzione per lo "sfarfallio" iniziale dei bottoni nella visualizzazione Sheet
-4) sistemare l'accesso alle immagini (path ecc ecc)
+### group all custom styles in CSS files (currently custom styles are directly in the html code)
+
+### fix the show/hide effect of the buttons in the sheet view
+
+### manage properly the file upload functionality (load .pdf file, convert each page in
+    a single image, create a new folder inside "media", etc...)

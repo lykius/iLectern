@@ -18,7 +18,7 @@ class SheetView(TemplateView):
     def get(self, request, *args, **kwargs):
         sheet = Sheet.objects.get(pk=kwargs['pk'])
         filename, extension = os.path.splitext(sheet.file_name)
-        directory = 'sheets/archive/' + filename + '/'
+        directory = '/media/sheets/' + filename + '/'
         images = []
         for i in range(0, sheet.number_of_pages):
             images.append(directory + str(i) + '.jpg')
