@@ -1,0 +1,15 @@
+{% extends "sheets/base.html" %}
+
+{% block title %}
+    Music Sheets
+{% endblock title %}
+
+{% block page-content %}
+    <h1>Music Sheets</h1>
+
+    <div class="collection">
+        {% for sheet in sheets  %}
+            <a href="{% url "sheets:view" pk=sheet.pk %}" class="collection-item">{{ sheet.title }}</a>
+        {% endfor %}
+    </div>
+{% endblock page-content %}

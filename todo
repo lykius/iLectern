@@ -1,0 +1,4 @@
+1) creare CSS con stili ora sparsi nei vari sorgenti HTML
+2) sistemare in modo elegante i problemi di utilizzo di JQuery all'interno di Electron
+3) trovare una soluzione per lo "sfarfallio" iniziale dei bottoni nella visualizzazione Sheet
+4) sistemare l'accesso alle immagini (path ecc ecc)
