@@ -12,4 +12,22 @@
             <a href="{% url "sheets:view" pk=sheet.pk %}" class="collection-item">{{ sheet.title }}</a>
         {% endfor %}
     </div>
+
+    <div class="right">
+        <a id="addButton"
+           class="waves-effect waves-light btn modal-trigger"
+           href="#addForm">
+            <i class="material-icons">note_add</i>
+        </a>
+    </div>
+
+    <div id="addForm" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
 {% endblock page-content %}
