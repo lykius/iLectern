@@ -15,7 +15,7 @@
 
     <div class="right">
         <a id="addButton"
-           class="waves-effect waves-light btn modal-trigger"
+           class="waves-effect waves-light btn"
            href="#addForm">
             <i class="material-icons">note_add</i>
         </a>
@@ -23,11 +23,20 @@
 
     <div id="addForm" class="modal">
         <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            {% include "sheets/add.html" %}
         </div>
         <div class="modal-footer">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
 {% endblock page-content %}
+
+{% block page-scripts %}
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal({
+                    dismissible: true,
+                });
+        });
+    </script>
+{% endblock page-scripts %}
