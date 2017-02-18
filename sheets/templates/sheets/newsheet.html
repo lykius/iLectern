@@ -1,0 +1,25 @@
+<h5>New music sheet</h5>
+
+<form action="{% url "sheets:list" %}" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="new_sheet_title" type="text" class="validate">
+            <label for="new_sheet_title">Title</label>
+        </div>
+        <div class="file-field input-field col s12">
+            <div class="btn">
+                <i class="material-icons">perm_media</i>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input id="new_sheet_file" class="file-path validate" type="text" placeholder="File">
+            </div>
+        </div>
+        <div class="right">
+            <div class="waves-effect waves-light btn">
+                <input type="submit" value="ADD">
+            </div>
+        </div>
+    </div>
+</form>
