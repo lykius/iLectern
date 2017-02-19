@@ -8,10 +8,17 @@ from .models import Sheet
 class SheetListView(TemplateView):
     template_name = 'sheets/list.html'
 
-    def get(self, request, *args, **kwargs):
+    def get_context_data(self, **kwargs):
+        context = super(SheetListView, self).get_context_data(**kwargs)
         sheets = Sheet.objects.all().order_by('title')
-        context = self.get_context_data(**kwargs)
         context['sheets'] = sheets
+        return context
+
+    def post(self, request, *args, **kwargs):
+        title = request.POST.get('title', '')
+        # file = request.POST.get('file', '')
+        Sheet.objects.create(title=title, file_name='child.pdf', number_of_pages=2)
+        context = self.get_context_data(**kwargs)
         return self.render_to_response(context)
 
 class SheetView(TemplateView):
