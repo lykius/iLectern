@@ -4,3 +4,7 @@
 
 ### manage properly the file upload functionality (load .pdf file, convert each page in
     a single image, create a new folder inside "media", etc...)
+
+### new sheet form: the "input" area is not extended to the entire "ADD" button
+
+### new sheet form: the advisor that shows up when typing the title is quite annoying

@@ -29,7 +29,7 @@
         </div>
 
         <div class="col s5">
-            {% if sheet.number_of_pages > 1 %}
+            {% if images|length > 1 %}
                 <img id="secondImage" src="{{ images.1 }}" style="height:95vh; display:block; margin:auto;">
             {% endif %}
         </div>
@@ -57,7 +57,7 @@
                     $("#previousButton").show();
                 }
 
-                if (firstPage >= {{ sheet.number_of_pages }} - 2) {
+                if (firstPage >= images.length - 2) {
                     $("#nextButton").hide();
                 }
                 else {
@@ -67,7 +67,7 @@
 
             function loadImages() {
                 $("#firstImage").attr("src", images[firstPage]);
-                if (firstPage < {{ sheet.number_of_pages }} - 1)
+                if (firstPage < images.length - 1)
                 {
                     $("#secondImage").attr("src", images[firstPage + 1]);
                 }
@@ -82,7 +82,7 @@
             });
 
             $("#nextButton").click(function() {
-                if (firstPage < {{ sheet.number_of_pages }} - 2){
+                if (firstPage < images.length - 2){
                     firstPage++;
                     checkButtonsEnablings();
                     loadImages();
